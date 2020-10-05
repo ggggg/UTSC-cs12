@@ -149,7 +149,6 @@
             return 6100 + 11420 * 3;
         }
         const setAllProps = (obj, shown) => {
-            console.log(obj);
             if (!shown) {
                 obj.style.opacity = 0;
                 obj.style.transform = 'scale(0)';
@@ -169,7 +168,6 @@
 Update the price each time a value changes
         */
         const updatePrice = () => {
-            console.log('test');
             let price = getBasePrice(document.getElementById('intrenational').checked);
             let aprox = false;
             if (document.getElementById('residence').checked) {
