@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css" />
+    <title>
+        Computer Science - University of Toronto Scarborough
+    </title>
+</head>
+
+<body>
+    <!--Menu-->
+    <nav class="nav">
+        <img class="logo navItem" src="./logo.png">
+
+        <ul class="navItem">
+            <il>
+                <a href="#home">Home</a>
+            </il>
+            <il>
+                <a href="#info">Info</a>
+            </il>
+            <il>
+                <a href="#requirements">Requirements</a>
+            </il>
+            <il><a href="#toution">Toution</a></il>
+        </ul>
+    </nav>
+    <!--Main div-->
+    <div class="main">
+        <!--The main screen-->
+        <header id="home">
+            <div class="title">
+                <h1>Welcome To The Unoffical University of Toronto Scarborough, Computer Science Website!</h1>
+            </div>
+        </header>
+        <!-- the program info-->
+        <div id="info">
+            <div class="centered">
+                <h2>Info about the Computer Science program at UofT Scarborough:</h2>
+                <div class="flexContainer">
+                    <div style="text-align:left; flex: 100%;" class="infoChild">
+                        <ul>
+                            <il>
+                                <h3>Offical name of program:</h3>
+                                <p>
+                                    Computer Science
+                                </p>
+
+                            </il>
+                            <il>
+                                <h3>Length of program:</h3>
+                                <p>
+                                    4 years
+                                </p>
+
+                            </il>
+                            <il>
+                                <h3>Location:</h3>
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d23043.460348550463!2d-79.18105502905274!3d43.78463690294658!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xbb656e0169887bac!2sUniversity%20of%20Toronto%20Scarborough!5e0!3m2!1sen!2sca!4v1601605395331!5m2!1sen!2sca"
+                                    width="250" height="200" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                            </il>
+                            <il>
+                                <h3>
+                                    contact
+                                </h3>
+                                <p>
+                                    Phone: <a href="tel:+1 (416) 287-7529">+1 (416) 287-7529</a><br>Email: <a href="mailto:utsc.admissions@utoronto.ca"> utsc.admissions@utoronto.ca</a>
+                                </p>
+                            </il>
+                        </ul>
+                    </div>
+                    <div style="text-align:right;flex: 100%;">
+                        <img class="infoChild" src="./building2.jpg" alt="UofT building" style="width: 100%;"></div>
+                </div>
+            </div>
+            <hr>
+            <div class="centered" style="text-align: left; margin-top:10px; margin-bottom: 40px;">
+                <h3 style="text-align: center; margin-bottom: 20px;">
+                    Program Summary
+                </h3>
+                <p>
+                    The program teaches students how to become cridical thinkers and problem solovers. The program will teach one C, Java, And more!
+                </p>
+                <br><br>
+                <h3>Some of the courses offered:</h3><br>
+                <ul class="courses" style=" text-align: left; list-style-type: circle;">
+                    <il>Introduction to Computer Science I</il>
+                    <il>Introduction to Computer Science II</il>
+                    <il>Software Design</il>
+                    <il>Introduction to Database and Web Applications</il>
+                    <il>Programming on the Web</il>
+                    <il>Computer Organization</il>
+                    <il>Artificial Intelligence</il>
+                    <il>Find all courses at <a href="https://utsc.utoronto.ca/cms/current-computer-science-courses">the offical UTSC site</a></il>
+                </ul>
+
+            </div>
+        </div>
+        <div id="requirements">
+            <div class="centered">
+                <h2 style="margin: 10px;">
+                    Requirements
+                </h2>
+                <div class="flexContainer">
+                    <div style="text-align: left; padding: 40px">
+                        <h4><b>Ontario Secondary School Diploma<br>Six 4U/M courses, including:</b></h4>
+                        <ul>
+                            <li>Advanced Functions (MHF4U)</li>
+                            <li>Calculus &amp; Vectors (MCV4U)</li>
+                            <li>English (ENG4U)</li>
+                        </ul>
+                        <br>
+                        <p><b>Approximate Grade Requirements:</b> High 80s </p>
+                    </div><img src="./inside.jpg" width="40%">
+                </div>
+            </div>
+        </div>
+
+        <!-- toution calculator -->
+        <div id="toution">
+            <h2>Toution Calculator</h2>
+            <div class="cal">
+                <p>Intrenational? <input onchange="updatePrice(this)" type="checkbox" id="intrenational" class="check-box"></p>
+                <p>Include approximate books costs? <input onchange="updatePrice(this)" type="checkbox" id="books" class="check-box"></p>
+                <p>Residence Housing (Cost includes heat, electricity, water and wi-fi. Meal plan cost not included)? <input onchange="updatePrice(this)" type="checkbox" id="residence" class="check-box"></p>
+                <div class="hidden" id="residencehidden">
+                    <p>Number of year of Residence Housing? <input min="1" max="4" value="1" onchange="updatePrice(this)" type="number" id="residence-num" class="textbox"></p>
+                </div>
+                <div class="hidden" id="uhiphidden">
+                    <p>University Health Insurance (UHIP)? Mandatory for intrenational students. <input onchange="(e) => {
+                        this.value = math.min(math.abs(this.value), 4);
+                        updatePrice(this)
+                        } " type="checkbox" id="uhip" class="check-box "></p>
+                </div>
+                <p id="total"></p>
+                <p>*Total may not include some fees, please check <a href="https://utsc.utoronto.ca/admissions/tuition-fees">UofT Scarborough offical site</a> for more info.</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p style="color: white;">Site made by: Ido</p>
+    </footer>
+    <script>
+        const getBasePrice = (intrenational) => {
+            if (intrenational) {
+                return 57020 + 61330 * 3 + 636;
+            }
+            return 6100 + 11420 * 3;
+        }
+        const setAllProps = (obj, shown) => {
+            console.log(obj);
+            if (!shown) {
+                obj.style.opacity = 0;
+                obj.style.transform = 'scale(0)';
+                window.setTimeout(function() {
+                    obj.style.display = 'none';
+                }, 700);
+                return;
+            }
+            obj.style.display = 'block';
+            window.setTimeout(function() {
+                obj.style.opacity = 1;
+                obj.style.transform = 'scale(1)';
+            }, 0);
+        }
+
+        /**
+Update the price each time a value changes
+        */
+        const updatePrice = () => {
+            console.log('test');
+            let price = getBasePrice(document.getElementById('intrenational').checked);
+            let aprox = false;
+            if (document.getElementById('residence').checked) {
+                console.log(document.getElementById('residence-num'));
+                price += 8480.5 * parseInt(document.getElementById('residence-num').value, 10);
+
+                aprox = true;
+                setAllProps(document.getElementById('residencehidden'), true);
+            } else {
+                setAllProps(document.getElementById('residencehidden'), false);
+            }
+            if (document.getElementById('intrenational').checked) {
+                setAllProps(document.getElementById('uhiphidden'), false)
+            } else {
+                setAllProps(document.getElementById('uhiphidden'), true)
+                if (document.getElementById('uhip').checked) {
+                    price += 636 * 4;
+                    aprox = true;
+                }
+            }
+            if (document.getElementById('books').checked) {
+                price += 1500
+                aprox = true;
+            }
+            document.getElementById("total").innerHTML = `Total ${aprox? "approximate ":" "} price for 4 years: ${price}$`;
+        }
+        updatePrice();
+    </script>
+</body>
+
+</html>

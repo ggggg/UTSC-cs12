@@ -1,0 +1,159 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    color: black;
+    overflow-x: hidden;
+}
+
+.nav {
+    width: 100%;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: #DAE1E9;
+    /* height: 50px; */
+    margin: 0;
+    align-items: center;
+    display: flex;
+    /* justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column; */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+.main {}
+
+.logo {
+    width: auto;
+    height: 60px;
+    padding-bottom: 10px;
+}
+
+.navItem {
+    font-size: 20px;
+    color: #002A5C;
+    margin: 10px;
+}
+
+.nav a {
+    text-decoration: none;
+    background-color: #002A5C;
+    color: white;
+    padding: 15px;
+}
+
+.title {
+    background-color: white;
+    padding: 100px;
+    margin-left: 3%;
+}
+
+.title h1 {
+    color: #002A5C;
+    font-family: helvetica;
+    font-size: 50px;
+}
+
+header {
+    background-image: url("./building.jpg");
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    background-color: #666666;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100vw;
+}
+
+#info {
+    width: 100%;
+    background-color: ghostwhite;
+    padding: 50px 0;
+    /*  */
+}
+
+.centered {
+    margin: 0 auto;
+    /* background-color: red; */
+    width: 50%;
+    text-align: center;
+}
+
+.infoChild {
+    margin: 10px;
+}
+
+#requirements {
+    background-color: #002A5C;
+    color: white;
+    padding: 100px;
+}
+
+.flexContainer {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
+
+#toution {
+    text-align: center;
+}
+
+.cal {
+    font-size: 25px;
+}
+
+.cal p {
+    border: 3px solid black;
+    padding: 10px;
+    width: 60%;
+    margin: 40px auto;
+    border-radius: 100px;
+}
+
+.hidden {
+    opacity: 0;
+    transform: scale(0);
+    transition: .6s ease opacity, .6s ease transform;
+}
+
+#total {
+    font-size: 30px;
+    color: red;
+}
+
+footer {
+    height: 40px;
+    width: 100%;
+    background-color: #002A5C;
+    margin-top: 30px;
+}
+
+.courses {
+    list-style-type: circle;
+}
+
+.courses il {
+    list-style-type: circle;
+    display: block;
+}
